@@ -1,4 +1,9 @@
+html{
+    overflow:hidden;
+}
+
 body{
+    overflow:auto;
     background-color: #666666;
 }
 
