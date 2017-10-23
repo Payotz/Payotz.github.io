@@ -14,11 +14,12 @@ var invalid_input = [16,18,19,20,27,33,34,35,36,37,38,39,40,45,46,104,
                      192,220,221,222]
 function test(){
     var target = document.getElementById('prompt_text')
-    document.onkeyup = function(event){
-        if (event.keyCode == 13){//RETURN KEY
+    document.onkeydown = function(event){
+        if (event.keyCode == 13){
             var input_string = target.innerHTML.substr(limit).toLowerCase()
-            if(input_string in cli_commands)
+            if(input_string in cli_commands){
                 cli_commands[input_string]()
+            }
             else
                 target.innerHTML +='<br>' + ' Command not identified'
             target.innerHTML += '<br>' + '[payotz.github.io ~]$ '

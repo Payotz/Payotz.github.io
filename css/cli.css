@@ -4,9 +4,6 @@
 
 #prompt{
     background-color:black;
-    color:#00FF00;
-    font-family:monospace;
-    font-size:12px;
     width:100%;
     height:100%;
     overflow:auto;
@@ -22,4 +19,26 @@
     position:fixed;
     top:0;
     left:0;
+}
+
+#prompt_text{
+    color:#00FF00;
+    font-family:monospace;
+    font-size:12px;
+}
+#prompt_text::after{
+    content: '|';
+    width:20px;
+    height:2px;
+    color:#00FF00;
+    display: inline-block;
+    animation:blink 1s linear infinite alternate;
+}
+@keyframes blink{
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
