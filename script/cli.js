@@ -176,21 +176,21 @@ function cli_github_NeneQuest(){
 }
 
 function cli_github_open_mercEngine(){
-  window.open('github.com/Payotz/mercEngine') 
+  window.open('https://www.github.com/Payotz/mercEngine') 
 }
 
 function cli_github_open_bot(){
-  window.open('github.com/Payotz/Payotz_Bot')
+  window.open('https://www.github.com/Payotz/Payotz_Bot')
 }
 
 function cli_github_open_chip8(){
-  window.open('github.com/Payotz/Chip8Emu') 
+  window.open('https://www.github.com/Payotz/Chip8Emu') 
 }
 
 function cli_github_open_gameboyemu(){
-  window.open('github.com/Payotz/GameBoyEmu')
+  window.open('https://www.github.com/Payotz/GameBoyEmu')
 }
 
 function cli_github_open_nenequest(){
-  window.open('github.com/Payotz/Nene-Quest') 
+  window.open('https://www.github.com/Payotz/Nene-Quest') 
 }
