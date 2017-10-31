@@ -5,13 +5,12 @@ var open_commands = {};
 var info_commands = {};
 var save_commands = {};
 cli_commands["github"] = cli_github
-cli_commands["mercengine"] = cli_github_mercEngine
-cli_commands["nenequest"] = cli_github_NeneQuest
-cli_commands["gameboyemu"] = cli_github_gameboy
-cli_commands["chip8emu"] = cli_github_chip8
-cli_commands["payotzbot"]=cli_github_bot
 
 info_commands["mercengine"] = cli_github_mercEngine
+info_commands["nenequest"] = cli_github_NeneQuest
+info_commands["gameboyemu"] = cli_github_gameboy
+info_commands["chip8emu"] = cli_github_chip8
+info_commands["payotzbot"] = cli_github_bot
 
 open_commands["mercengine"] = cli_github_open_mercEngine
 open_commands["payotzbot"] = cli_github_open_bot
@@ -19,6 +18,11 @@ open_commands["chip8emu"] = cli_github_open_chip8emu
 open_commands["gameboyemu"] = cli_github_open_gameboyemu
 open_commands["nenequest"] = cli_github_open_nenequest
 
+save_commands["mercengine"] = cli_github_save_mercEngine
+save_commands["payotzbot"] = cli_github_save_bot
+save_commands["chip8emu"] = cli_github_save_chip8emu
+save_commands["gameboyemu"] = cli_github_open_gameboyemu
+save_commands["nenequest"] = cli_github_open_nenequest
 
 var invalid_input = [16,18,19,20,27,33,34,35,36,37,38,39,40,45,46,104,
                      105,106,107,109,110,112,113,114,115,116,117,118,
@@ -63,7 +67,11 @@ function cli_github(){
     var target = document.getElementById('prompt_text')
     target.innerHTML +='<br>' + 'github.com/Payotz'
     target.innerHTML +='<br>' + '/* '
-    target.innerHTML +='<br>' + '* Several Commands have been found: '
+    target.innerHTML +='<br>' + '* <b>Several Commands have been found:</b> '
+    target.innerHTML +='<br>' + '* open <repo_name> : opens the repository link'
+    target.innerHTML +='<br>' + '* info <repo_name> : lists information about the repository'
+    target.innerHTML +='<br>' + '* save <repo_name> : saves the repository on the desktop'
+    target.innerHTML +='<br>' + '* <b>Several repositories have been found:</b> '
     target.innerHTML +='<br>' + '* mercEngine : A 2D GameEngine written in D'
     target.innerHTML +='<br>' + '* payotzBot : My Own Personal Discord Bot'
     target.innerHTML +='<br>' + '* Chip8Emu : My attempt at a Chip8 emu '
@@ -115,7 +123,11 @@ function cli_github_bot(){
     target.innerHTML += `<p># Payotz_Bot My own Personal Discord Bot</p>
     <p># Dependencies:</p> 
     <p>Discord.py</p>
-    <p>Requests for humans</p>`
+    <p>Requests for humans</p>
+    <p> Extra Commands found: <br>
+    <b>'open payotzbot'</b> : Opens the github link<br>
+    <b>'info payotzbot </b> : Lists information about MercEngine<br>
+    <b>'save payotzbot</b> : Downloads the repo</p>`
 }
 
 function cli_github_chip8(){
@@ -139,7 +151,11 @@ function cli_github_chip8(){
     <p>http://www.multigesture.net/articles/how-to-write-an-emulator-chip-8-interpreter/</p>
     <p>http://devernay.free.fr/hacks/chip8/C8TECH10.HTM</p>
     <p>https://github.com/Spittie/chip8-sdl</p>
-    <p>https://www.libsdl.org/projects/SDL_mixer/docs/SDL_mixer.html </p>`
+    <p>https://www.libsdl.org/projects/SDL_mixer/docs/SDL_mixer.html </p>
+    <p> Extra Commands found: <br>
+    <b>'open chip8emu'</b> : Opens the github link<br>
+    <b>'info chip8emu </b> : Lists information about MercEngine<br>
+    <b>'save chip8emu </b> : Downloads the repo</p>`
 }
 
 function cli_github_gameboy(){
@@ -154,7 +170,11 @@ function cli_github_gameboy(){
     <p> SDL2</p>
     <p> SDL2_mixer</p>
     <p> #TODO#</p>
-    <p> Refactor gameboy.cpp to be readable.</p>`
+    <p> Refactor gameboy.cpp to be readable.</p>
+    <p> Extra Commands found: <br>
+    <b>'open gameboyemu'</b> : Opens the github link<br>
+    <b>'info gameboyemu </b> : Lists information about MercEngine<br>
+    <b>'save gameboyemu </b> : Downloads the repo</p>`
 }
 
 function cli_github_NeneQuest(){
@@ -172,25 +192,60 @@ function cli_github_NeneQuest(){
     <p>* SDL_Image</p>
     <p>* make</p>
     <p>**Note:** I am currently using mingw32, and I have only built it on mingw32. I don't know if it's buildable in actual GNU/Linux</p>
-    <p>## Disclaimer: I do not own the Anime &quot;New Game&quot; nor am the creator or is involved in its production. The sprites used in this project are not mine and are taken directly from New Game S2 - Episode 6. </p>`
+    <p>## Disclaimer: I do not own the Anime &quot;New Game&quot; nor am the creator or is involved in its production. The sprites used in this project are not mine and are taken directly from New Game S2 - Episode 6. </p>
+    <p> Extra Commands found: <br>
+        <b>'open nenequest'</b> : Opens the github link<br>
+        <b>'info nenequest </b> : Lists information about MercEngine<br>
+        <b>'save nenequest </b> : Downloads the repo</p>`
 }
 
 function cli_github_open_mercEngine(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'Opening MercEngine Now' 
   window.open('https://www.github.com/Payotz/mercEngine') 
 }
 
 function cli_github_open_bot(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'Opening PayotzBot Now' 
   window.open('https://www.github.com/Payotz/Payotz_Bot')
 }
 
-function cli_github_open_chip8(){
+function cli_github_open_chip8emu(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'Opening Chip8Emu Now' 
   window.open('https://www.github.com/Payotz/Chip8Emu') 
 }
 
 function cli_github_open_gameboyemu(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'Opening GameboyEmu Now' 
   window.open('https://www.github.com/Payotz/GameBoyEmu')
 }
 
 function cli_github_open_nenequest(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'Opening NeneQuest Now' 
   window.open('https://www.github.com/Payotz/Nene-Quest') 
+}
+
+function cli_github_save_mercEngine(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'Command is still WIP' 
+}
+function cli_github_save_bot(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'Command is still WIP' 
+}
+function cli_github_save_chip8emu(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'Command is still WIP' 
+}
+function cli_github_save_gameboyemu(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'Command is still WIP' 
+}
+function cli_github_save_nenequest(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'Command is still WIP' 
 }
