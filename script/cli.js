@@ -1,12 +1,24 @@
 var limit = 0;
 
 var cli_commands = {};
+var open_commands = {};
+var info_commands = {};
+var save_commands = {};
 cli_commands["github"] = cli_github
 cli_commands["mercengine"] = cli_github_mercEngine
 cli_commands["nenequest"] = cli_github_NeneQuest
 cli_commands["gameboyemu"] = cli_github_gameboy
 cli_commands["chip8emu"] = cli_github_chip8
 cli_commands["payotzbot"]=cli_github_bot
+
+info_commands["mercengine"] = cli_github_mercEngine
+
+open_commands["mercengine"] = cli_github_open_mercEngine
+open_commands["payotzbot"] = cli_github_open_bot
+open_commands["chip8emu"] = cli_github_open_chip8emu
+open_commands["gameboyemu"] = cli_github_open_gameboyemu
+open_commands["nenequest"] = cli_github_open_nenequest
+
 
 var invalid_input = [16,18,19,20,27,33,34,35,36,37,38,39,40,45,46,104,
                      105,106,107,109,110,112,113,114,115,116,117,118,
@@ -17,11 +29,17 @@ function test(){
     document.onkeydown = function(event){
         if (event.keyCode == 13){
             var input_string = target.innerHTML.substr(limit).toLowerCase()
-            if(input_string in cli_commands){
-                cli_commands[input_string]()
-            }
-            else
+            input_string = input_string.split(" ")
+            if(input_string.length > 1){
+              if(input_string[0] = 'open'){
+                open_commands[input_string[1]]()
+              }
+            }else{
+              if(input_string in cli_commands){
+                  cli_commands[input_string]()
+              }else
                 target.innerHTML +='<br>' + ' Command not identified'
+            }
             target.innerHTML += '<br>' + '[payotz.github.io ~]$ '
             limit = target.innerHTML.length + 1
             document.scrollingElement.scrollTop = 10000
@@ -87,7 +105,11 @@ function cli_github_mercEngine(){
     <p>Replace the SDL_Renderer with the OpenGL Renderer</p>
     <p>### INFO ###</p>
     <p>Branch opengl_render is open. The OpenGL process is there.<br>
-    </p>`
+    </p>
+    <p> Extra Commands found: <br>
+        <b>'open mercengine'</b> : Opens the github link<br>
+        <b>'info mercengine </b> : Lists information about MercEngine<br>
+        <b>'save mercengine </b> : Downloads the repo</p>`
 
 }
 function cli_github_bot(){
@@ -155,4 +177,24 @@ function cli_github_NeneQuest(){
     <p>* make</p>
     <p>**Note:** I am currently using mingw32, and I have only built it on mingw32. I don't know if it's buildable in actual GNU/Linux</p>
     <p>## Disclaimer: I do not own the Anime &quot;New Game&quot; nor am the creator or is involved in its production. The sprites used in this project are not mine and are taken directly from New Game S2 - Episode 6. </p>`
+}
+
+function cli_github_open_mercEngine(){
+  window.open('github.com/Payotz/mercEngine') 
+}
+
+function cli_github_open_bot(){
+  window.open('github.com/Payotz/Payotz_Bot')
+}
+
+function cli_github_open_chip8(){
+  window.open('github.com/Payotz/Chip8Emu') 
+}
+
+function cli_github_open_gameboyemu(){
+  window.open('github.com/Payotz/GameBoyEmu')
+}
+
+function cli_github_open_nenequest(){
+  window.open('github.com/Payotz/Nene-Quest') 
 }
