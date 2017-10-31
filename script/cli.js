@@ -34,6 +34,7 @@ function test(){
         if (event.keyCode == 13){
             var input_string = target.innerHTML.substr(limit).toLowerCase()
             input_string = input_string.split(" ")
+            console.log(input_string[0])
             if(input_string.length > 1){
               if(input_string[0] = 'open'){
                 open_commands[input_string[1]]()
@@ -73,9 +74,9 @@ function cli_github(){
     target.innerHTML +='<br>' + 'github.com/Payotz'
     target.innerHTML +='<br>' + '/* '
     target.innerHTML +='<br>' + '* <b>Several Commands have been found:</b> '
-    target.innerHTML +='<br>' + '* open <repo_name> : opens the repository link'
-    target.innerHTML +='<br>' + '* info <repo_name> : lists information about the repository'
-    target.innerHTML +='<br>' + '* save <repo_name> : saves the repository on the desktop'
+    target.innerHTML +='<br>' + '* open /<repo_name/> : opens the repository link'
+    target.innerHTML +='<br>' + '* info /<repo_name/> : lists information about the repository'
+    target.innerHTML +='<br>' + '* save /<repo_name/> : saves the repository on the desktop'
     target.innerHTML +='<br>' + '* <b>Several repositories have been found:</b> '
     target.innerHTML +='<br>' + '* mercEngine : A 2D GameEngine written in D'
     target.innerHTML +='<br>' + '* payotzBot : My Own Personal Discord Bot'
