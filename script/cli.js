@@ -50,10 +50,6 @@ function test(){
                 return
             }
         }
-        if(invalid_input.indexOf(event.keyCode) > -1){
-            console.log("Removed : " + event.keyCode)
-            return
-        }
         
         target.innerHTML += String.fromCharCode(event.keyCode)
     }
