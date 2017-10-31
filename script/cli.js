@@ -5,6 +5,9 @@ var open_commands = {};
 var info_commands = {};
 var save_commands = {};
 cli_commands["github"] = cli_github
+cli_commands["info"] = cli_info
+cli_commands["open"] = cli_open
+cli_commands["save"] = cli_save
 
 info_commands["mercengine"] = cli_github_mercEngine
 info_commands["nenequest"] = cli_github_NeneQuest
@@ -69,14 +72,26 @@ function cli_hello(){
     var target = document.getElementById('prompt_text')
     target.innerHTML +='<br>' + 'This is a test prompt!'
 }
+function cli_open(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'open \<repo_name\> : opens the repository link'
+}
+function cli_info(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'info \<repo_name\> : lists information about the repository'
+}
+function cli_save(){
+  var target = document.getElementById('prompt_text')
+  target.innerHTML += '<br>' + 'save \<repo_name\> : saves the repository on the desktop'
+}
 function cli_github(){
     var target = document.getElementById('prompt_text')
     target.innerHTML +='<br>' + 'github.com/Payotz'
     target.innerHTML +='<br>' + '/* '
     target.innerHTML +='<br>' + '* <b>Several Commands have been found:</b> '
-    target.innerHTML +='<br>' + '* open /<repo_name/> : opens the repository link'
-    target.innerHTML +='<br>' + '* info /<repo_name/> : lists information about the repository'
-    target.innerHTML +='<br>' + '* save /<repo_name/> : saves the repository on the desktop'
+    target.innerHTML +='<br>' + '* open \<repo_name\> : opens the repository link'
+    target.innerHTML +='<br>' + '* info \<repo_name\> : lists information about the repository'
+    target.innerHTML +='<br>' + '* save \<repo_name\> : saves the repository on the desktop'
     target.innerHTML +='<br>' + '* <b>Several repositories have been found:</b> '
     target.innerHTML +='<br>' + '* mercEngine : A 2D GameEngine written in D'
     target.innerHTML +='<br>' + '* payotzBot : My Own Personal Discord Bot'
