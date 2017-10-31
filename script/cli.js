@@ -74,24 +74,24 @@ function cli_hello(){
 }
 function cli_open(){
   var target = document.getElementById('prompt_text')
-  target.innerHTML += '<br>' + 'open \<repo_name\> : opens the repository link'
+  target.innerHTML += '<br>' + 'open &lt;repo_name &gt; : opens the repository link'
 }
 function cli_info(){
   var target = document.getElementById('prompt_text')
-  target.innerHTML += '<br>' + 'info \<repo_name\> : lists information about the repository'
+  target.innerHTML += '<br>' + '  info &lt;repo_name&gt; : lists information about the repository'
 }
 function cli_save(){
   var target = document.getElementById('prompt_text')
-  target.innerHTML += '<br>' + 'save \<repo_name\> : saves the repository on the desktop'
+  target.innerHTML += '<br>' + 'save &lt;repo_name&gt; : saves the repository on the desktop'
 }
 function cli_github(){
     var target = document.getElementById('prompt_text')
     target.innerHTML +='<br>' + 'github.com/Payotz'
     target.innerHTML +='<br>' + '/* '
     target.innerHTML +='<br>' + '* <b>Several Commands have been found:</b> '
-    target.innerHTML +='<br>' + '* open \<repo_name\> : opens the repository link'
-    target.innerHTML +='<br>' + '* info \<repo_name\> : lists information about the repository'
-    target.innerHTML +='<br>' + '* save \<repo_name\> : saves the repository on the desktop'
+    target.innerHTML +='<br>' + '* open &lt;repo_name&gt; : opens the repository link'
+    target.innerHTML +='<br>' + '* info &lt;repo_name&gt; : lists information about the repository'
+    target.innerHTML +='<br>' + '* save &lt;repo_name&gt; : saves the repository on the desktop'
     target.innerHTML +='<br>' + '* <b>Several repositories have been found:</b> '
     target.innerHTML +='<br>' + '* mercEngine : A 2D GameEngine written in D'
     target.innerHTML +='<br>' + '* payotzBot : My Own Personal Discord Bot'
