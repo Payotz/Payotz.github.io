@@ -38,21 +38,24 @@ function test(){
             var input_string = target.innerHTML.substr(limit).toLowerCase()
             input_string = input_string.split(" ")
             console.log(input_string[0])
+            console.log(input_string[1])
+            
             if(input_string.length > 1){
-              if(input_string[0] = 'open'){
-                open_commands[input_string[1]]()
-              }else if(input_string[0] = 'info'){
-               info_commands[input_string[1]]() 
-              }else if(input_string[0] = 'save'){
-                save_commands[input_string[1]]()
-              }else
-                target.innerHTML +='<br>' + 'Command not identified'
+                if(input_string[0] = 'open')
+                    open_commands[input_string[1]]()
+                else if(input_string[0] = 'info')
+                    info_commands[input_string[1]]() 
+                else if(input_string[0] = 'save')
+                    save_commands[input_string[1]]()
+                else
+                    target.innerHTML +='<br>' + 'Command not identified'
             }else{
-              if(input_string in cli_commands){
-                  cli_commands[input_string]()
-              }else
-                target.innerHTML +='<br>' + ' Command not identified'
+                if(input_string in cli_commands)
+                    cli_commands[input_string]()
+                else
+                  target.innerHTML +='<br>' + ' Command not identified'
             }
+            
             target.innerHTML += '<br>' + '[payotz.github.io ~]$ '
             limit = target.innerHTML.length + 1
             document.scrollingElement.scrollTop = 10000
@@ -63,8 +66,12 @@ function test(){
                 return
             }
         }
-        
-        target.innerHTML += String.fromCharCode(event.keyCode)
+        if(invalid_input.indexOf(event.keyCode) == -1){
+          if(event.shiftKey)
+            target.innerHTML += String.fromCharCode(event.keyCode)
+          else
+            target.innerHTML += String.toLowerCase(String.fromCharCode(event.keyCode))
+        }
     }
 }
 
