@@ -41,11 +41,11 @@ function test(){
             console.log(input_string[1])
             
             if(input_string.length > 1){
-                if(input_string[0] = 'open')
-                    open_commands[input_string[1]]()
-                else if(input_string[0] = 'info')
-                    info_commands[input_string[1]]() 
-                else if(input_string[0] = 'save')
+                if(input_string[0] == 'info')
+                    info_commands[input_string[1]]()
+                else if(input_string[0] == 'open')
+                    open_commands[input_string[1]]() 
+                else if(input_string[0] == 'save')
                     save_commands[input_string[1]]()
                 else
                     target.innerHTML +='<br>' + 'Command not identified'
