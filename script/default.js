@@ -3,6 +3,7 @@ var interface = 0;
 function enableGUI(){
     document.getElementById('gui').style.display = 'block';
     interface = 1;
+    startGUI()
 }
 
 function enableCLI(){
@@ -12,4 +13,5 @@ function enableCLI(){
     test()
 }
 
+//window.onload = enableCLI
 window.onload = enableCLI
