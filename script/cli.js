@@ -66,6 +66,7 @@ function test(){
             document.scrollingElement.scrollTop = 10000
         }
         if (event.keyCode == 8){
+            event.preventDefault()
             if(target.innerHTML.length >= limit){
                 target.innerHTML = target.innerHTML.slice(0,-1)
                 return
