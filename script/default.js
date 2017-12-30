@@ -1,16 +1,19 @@
-var interface = 0;
-
 function enableGUI(){
+    document.onkeydown = null
     document.getElementById('gui').style.display = 'block';
-    interface = 1;
     startGUI()
 }
 
 function enableCLI(){
+    document.onkeydown = null
     document.getElementById('cli').style.display = 'block';
-    interface = 2;
     limit = document.getElementById('prompt_text').innerHTML.length;
     test()
+}
+
+document.onkeydown = function(event){
+    if(event.keyCode == 13)
+        enableCLI()
 }
 
 //window.onload = enableCLI

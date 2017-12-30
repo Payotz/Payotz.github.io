@@ -12,7 +12,7 @@
     margin : 30px 0
 }
 
-div.startMenu{
+div.startButton{
     background-color: #008D00;
     border-radius: 5px;
     text-shadow: 0px 1px black;
@@ -21,7 +21,7 @@ div.startMenu{
     bottom: 0;
 }
 
-div.startMenu:hover{
+div.startButton:hover{
     background-color: grey;
 }
 

@@ -8,6 +8,11 @@ cli_commands["github"] = cli_github
 cli_commands["info"] = cli_info
 cli_commands["open"] = cli_open
 cli_commands["save"] = cli_save
+cli_commands["gui"] = function(){
+    document.getElementById('cli').style.display = 'none';
+    document.getElementById('gui').style.display = 'block';
+    startGUI()
+}
 
 info_commands["mercengine"] = cli_github_mercEngine
 info_commands["nenequest"] = cli_github_NeneQuest
