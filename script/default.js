@@ -14,4 +14,4 @@ function enableCLI(){
 }
 
 //window.onload = enableCLI
-window.onload = enableCLI
+//window.onload = enableGUI

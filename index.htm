@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta charset = "UTF-8">
 <html><head>
     <link rel='stylesheet' type='text/css' href='css/default.css'>
     <link rel='stylesheet' type='text/css' href='css/cli.css'>
@@ -8,9 +9,19 @@
     <script src = 'script/default.js' type='text/javascript'></script>
 </head>
     <body>
+        <div id = "intro" align = center>
+                <img src = "rsc/construction.jpg" style = "height : 256px; width : 128"> <br>
+                <h4> Work in Progress</h4>
+                <h4> Sorry for the inconvenience.</h4>
+                <h4> Please click on one of the buttons below</h4>
+                <button type = "button" onclick = "enableCLI()"> CLI </button>
+                <button type = "button" onclick = "enableGUI()"> GUI </button>
+        </div>
         <div id = 'gui'>
             <div id = 'desktop'>
-                <h1> Hello World</h1>
+                <div id ='desktop_area'>
+
+                </div>
             </div>
         </div>
         <div id = 'cli'>
