@@ -76,7 +76,7 @@ function test(){
           if(event.shiftKey)
             target.innerHTML += String.fromCharCode(event.keyCode)
           else
-            target.innerHTML += String.toLowerCase(String.fromCharCode(event.keyCode))
+            target.innerHTML += String.fromCharCode(event.keyCode).toLowerCase()
         }
     }
 }
