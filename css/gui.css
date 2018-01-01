@@ -1,5 +1,5 @@
 #desktop{
-    background-image: url("bliss.jpg");
+    background-image: url("../rsc/bliss.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position:center;
@@ -10,6 +10,19 @@
     width: 100vw;
     position: relative;
     margin : 30px 0
+}
+
+div#startMenuHeader{
+}
+
+div#leftColumnHeader{
+    background-color: white;
+    position: "absolute";
+}
+
+div#rightColumnHeader{
+    background-color: gray;
+    position: "absolute";
 }
 
 div.startButton{
@@ -42,13 +55,4 @@ div.system_tray{
     left: 85%;
     border-width: thin;
     border-left-style: inset;
-}
-
-
-div.icon{
-
-}
-
-div.menu{
-
 }

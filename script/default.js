@@ -17,4 +17,4 @@ document.onkeydown = function(event){
 }
 
 //window.onload = enableCLI
-//window.onload = enableGUI
+window.onload = enableGUI
