@@ -32,7 +32,9 @@ function test(){
                 if(input_string[0] == 'info'){
                     for (var i = 0; i < repoJSON.length; i++){
                         if (repoJSON[i]["name"].toLowerCase() == input_string[1]){
-                            writeText('<br>' + repoJSON[i]["description"])
+                            var dummy = JSON.parse(getJSON(repoJSON[i]["url"] + "/readme"))
+                            var dummyline = getJSON(dummy["download_url"]).replace(/\n/g,"<br />")
+                            writeText('<br>' + dummyline)
                         }
                     } 
                 }
