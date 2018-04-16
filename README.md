@@ -8,10 +8,10 @@ Visit it at Payotz.github.io
 TODO
 ----
 * Complete GUI portion of the Website
-* Have a intro screen where user can choose between GUI or CLI
-* Provide a way to transition between GUI or CLI
+* ~Have a intro screen where user can choose between GUI or CLI~
+* ~Provide a way to transition between GUI or CLI~
 * Integrate the Github API 
 * ~~Cleanup spaghetti~~
-* Organize code
+* ~Organize code~
 * ~~Stop copy pasting every single resource into a folder just to make it Work~~
 * Organize every single resource into the rsc folder
