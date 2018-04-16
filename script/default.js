@@ -15,6 +15,6 @@ document.onkeydown = function(event){
     if(event.keyCode == 13)
         enableCLI()
 }
-var repoJSON = JSON.parse(getJSON('http://api.github.com/users/Payotz/repos'))
+var repoJSON = JSON.parse(getJSON('https://api.github.com/users/Payotz/repos'))
 window.onload = enableCLI
 //window.onload = enableGUI
